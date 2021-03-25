@@ -18,7 +18,7 @@ import {
   Contact,
 } from '@loyalory/themes/src/Startup/containers';
 
-// import preview from '@loyalory/themes/src/Startup/assets/preview.jpg';
+import preview from '@loyalory/themes/src/Startup/assets/preview.jpg';
 
 import SEO from '../components/SEO';
 
@@ -27,7 +27,7 @@ const Startup = ({ url }) => (
     <Head>
       <link href={theme.typography.googleFont} rel="stylesheet" />
       <meta name="theme-color" content={theme.colors.primary} />
-      {/* <meta property="og:image" content={`${url}${preview}`} /> */}
+      <meta property="og:image" content={`${url}${preview}`} />
     </Head>
     <SEO title="Home" />
 

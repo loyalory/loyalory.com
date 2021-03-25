@@ -227,8 +227,8 @@ export default {
           src: Avatar4,
           srcSet: `${Avatar4} 1x, ${Avatar42x} 2x`,
         },
-        name: 'Judith Black',
-        position: 'Co-Founder, CEO',
+        name: 'Hiep Le',
+        position: 'President, Investor',
         social: {
           linkedin: '#',
           twitter: '#',

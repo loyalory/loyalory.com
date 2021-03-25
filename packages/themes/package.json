@@ -1,0 +1,18 @@
+{
+  "name": "@loyalory/themes",
+  "version": "1.0.0",
+  "description": "Loyalory Team",
+  "main": "src/index.js",
+  "author": "Loyalory Team",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@react-google-maps/api": "1.9.5",
+    "polished": "3.6.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-scroll-parallax": "2.3.3",
+    "react-images": "1.1.7",
+    "react-countup": "4.3.3"
+  }
+}

@@ -1,0 +1,200 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Grid from '@loyalory/common/src/components/Grid';
+import Box from '@loyalory/common/src/components/Box';
+import Typography from '@loyalory/common/src/components/Typography';
+
+import Theme, { theme } from '../../index';
+
+<Meta title="Themes|Startup/System/Typography" />
+
+# Typography
+
+Documentation and examples for common text utilities to control alignment, wrapping, weight, and more.
+
+```js
+import Typography from '@loyalory/common/src/components/Typography';
+
+<Typography variant="h1">Hello world</Typography>;
+```
+
+<Preview>
+  <Theme>
+    <Grid gridTemplateColumns="auto 1fr" gridGap={48}>
+      <Typography variant="h1" as="h1">
+        Header 1
+      </Typography>
+      <Typography variant="h1" as="h1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </Typography>
+      <Typography variant="h2" as="h2">
+        Header 2
+      </Typography>
+      <Typography variant="h2" as="h2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id.
+      </Typography>
+      <Typography variant="h3" as="h3">
+        Header 3
+      </Typography>
+      <Typography variant="h3" as="h3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper.
+      </Typography>
+      <Typography variant="h4" as="h4">
+        Header 4
+      </Typography>
+      <Typography variant="h4" as="h4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque
+        dui.
+      </Typography>
+      <Typography variant="h5" as="h5">
+        Header 5
+      </Typography>
+      <Typography variant="h5" as="h5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque
+        dui, in rhoncus velit enim eget odio.s.
+      </Typography>
+      <Typography variant="h6" as="h6">
+        Header 6
+      </Typography>
+      <Typography variant="h6" as="h6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque
+        dui, in rhoncus velit enim eget odio.
+      </Typography>
+      <Typography variant="body1">Big paragraph</Typography>
+      <Typography variant="body1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper.
+      </Typography>
+      <Typography variant="body2">Medium paragraph</Typography>
+      <Typography variant="body2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque
+        dui, in rhoncus velit enim eget odio.
+      </Typography>
+      <Typography variant="body">Small paragraph</Typography>
+      <Typography variant="body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque
+        dui, in rhoncus velit enim eget odio. Cras laoreet auctor diam suscipit pellentesque.
+      </Typography>
+      <Typography variant="quote1">Big quote</Typography>
+      <Typography variant="quote1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper.
+      </Typography>
+      <Typography variant="quote2">Medium quote</Typography>
+      <Typography variant="quote2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque
+        dui, in rhoncus velit enim eget odio.
+      </Typography>
+      <Typography variant="button1">Big button</Typography>
+      <Typography variant="button1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper.
+      </Typography>
+      <Typography variant="button2">Medium button</Typography>
+      <Typography variant="button2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque
+        dui.
+      </Typography>
+      <Typography variant="button">Small button</Typography>
+      <Typography variant="button">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta
+        augue venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque
+        dui, in rhoncus velit enim eget odio. Cras laoreet auctor diam suscipit pellentesque.
+      </Typography>
+    </Grid>
+  </Theme>
+</Preview>
+
+## Customizing
+
+Use specified props to customize appearance and behaviour of your texts.
+
+### Text alignment
+
+<Preview>
+  <Theme>
+    <Typography textAlign="left">Text left</Typography>
+    <Typography textAlign="center">Text center</Typography>
+    <Typography textAlign="right">Text right</Typography>
+    <Typography textAlign="justify">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor turpis mi, in porta augue
+      venenatis id. Quisque posuere, nisl nec fringilla semper, mauris urna pellentesque dui, in
+      rhoncus velit enim eget odio. Cras laoreet auctor diam suscipit pellentesque.
+    </Typography>
+  </Theme>
+</Preview>
+
+### Font weight
+
+<Preview>
+  <Theme>
+    <Typography fontWeight={300}>Light</Typography>
+    <Typography fontWeight={400}>Normal</Typography>
+    <Typography fontWeight={500}>Medium</Typography>
+    <Typography fontWeight={600}>Semi-bold</Typography>
+    <Typography fontWeight={700}>Bold</Typography>
+    <Typography fontWeight={800}>Extra-bold</Typography>
+  </Theme>
+</Preview>
+
+### Font size
+
+<Preview>
+  <Theme>
+    <Typography fontSize={1}>Normal</Typography>
+    <Typography fontSize={2}>Bigger</Typography>
+    <Typography fontSize={24}>Custom</Typography>
+  </Theme>
+</Preview>
+
+### Font style
+
+<Preview>
+  <Theme>
+    <Typography fontStyle="normal">Normal</Typography>
+    <Typography fontStyle="italic">Italic</Typography>
+  </Theme>
+</Preview>
+
+### Color
+
+<Preview>
+  <Theme>
+    <Typography fontSize={20} color="primary">
+      Primary
+    </Typography>
+    <Typography fontSize={20} color="secondary">
+      Secondary
+    </Typography>
+    <Typography fontSize={20} color="accent">
+      Accent
+    </Typography>
+    <Typography fontSize={20} color="neutral">
+      Neutral
+    </Typography>
+  </Theme>
+</Preview>
+
+### Using HTML tags
+
+<Preview>
+  <Theme>
+    <Typography variant="body1" as="h1">
+      This will be rendered with basic styles, but with h1 tag
+    </Typography>
+    <Typography variant="h3">This will be rendered as paragraph with heading style</Typography>
+  </Theme>
+</Preview>
+
+## Prop types
+
+<Props of={Typography} />

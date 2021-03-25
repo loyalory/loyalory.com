@@ -1,0 +1,74 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Card from '@loyalory/common/src/components/Card';
+import Icon from '@loyalory/common/src/components/Icon';
+import Typography from '@loyalory/common/src/components/Typography';
+import Grid from '@loyalory/common/src/components/Grid';
+
+import Comparison from '@loyalory/icons/src/line/Comparison';
+import Heart from '@loyalory/icons/src/line/Heart';
+import Postcard from '@loyalory/icons/src/line/Postcard';
+
+import Theme from '../../index';
+
+<Meta title="Themes|Startup/Components/Card" component={Card} />
+
+# Card
+
+Cards contain content and actions about a single subject.
+
+```js
+import Card from '@loyalory/common/src/components/Card';
+
+<Card>Content of the card</Card>;
+```
+
+<Preview>
+  <Story name="Default">
+    <Theme>
+      <Card>Content of the card</Card>
+    </Theme>
+  </Story>
+</Preview>
+
+### Complex usage
+
+<Preview>
+  <Story name="Complex usage">
+    <Theme>
+      <Grid gridTemplateColumns="repeat(3, 1fr)" gridGap="30px">
+        <Card p={30}>
+          <Icon icon={Comparison} fontSize={48} color="primary" display="block" mb={24} />
+          <Typography variant="h4" as="h4">
+            Features subheading
+          </Typography>
+          <Typography color="gray.1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel vehicula dui.
+          </Typography>
+        </Card>
+        <Card p={30}>
+          <Icon icon={Heart} fontSize={48} color="secondary" display="block" mb={24} />
+          <Typography variant="h4" as="h4">
+            Features subheading
+          </Typography>
+          <Typography color="gray.1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel vehicula dui.
+          </Typography>
+        </Card>
+        <Card p={30}>
+          <Icon icon={Postcard} fontSize={48} color="accent" display="block" mb={24} />
+          <Typography variant="h4" as="h4">
+            Features subheading
+          </Typography>
+          <Typography color="gray.1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel vehicula dui.
+          </Typography>
+        </Card>
+      </Grid>
+    </Theme>
+  </Story>
+</Preview>
+
+## Props
+
+This component doesn't have specified prop types. Use default props as in DIV html tag and styled system stuff.

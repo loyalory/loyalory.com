@@ -1,0 +1,90 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Input from '@loyalory/common/src/components/Input';
+
+import Theme from '../../index';
+
+<Meta title="Themes|Startup/Form/Input" component={Input} />
+
+# Input
+
+Input let users enter and edit text.
+
+```js
+import Input from '@loyalory/common/src/components/Input';
+
+<Input name="first-name" />;
+```
+
+## Group preview
+
+<Preview>
+  <Theme>
+    <Input name="first-name" label="First name" placeholder="John" />
+    <Input name="last-name" label="Last name" placeholder="Doe" />
+    <Input name="birth-date" label="Birth date" type="date" />
+    <Input name="email" label="E-mail address" type="email" placeholder="your@email.com" />
+    <Input multiline name="message" label="Message" placeholder="Your message" />
+  </Theme>
+</Preview>
+
+## States
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <Theme>
+      <Input name="first-name" label="First name" placeholder="Please write your first name" />
+    </Theme>
+  </Story>
+</Preview>
+
+### With error
+
+<Preview>
+  <Story name="With error">
+    <Theme>
+      <Input
+        name="first-name"
+        label="First name"
+        placeholder="Please write your first name"
+        error="Given name doesn't exists"
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+### Success
+
+<Preview>
+  <Story name="Success">
+    <Theme>
+      <Input
+        name="first-name"
+        label="First name"
+        placeholder="Please write your first name"
+        success
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+### Multiline
+
+<Preview>
+  <Story name="Multiline">
+    <Theme>
+      <Input
+        name="first-name"
+        label="First name"
+        placeholder="Please write your first name"
+        multiline
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Input} />

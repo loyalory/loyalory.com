@@ -1,0 +1,71 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Theme from '../../index';
+import Radio from '@loyalory/common/src/components/Radio';
+
+<Meta title="Themes|Startup/Form/Radio" component={Radio} />
+
+# Radio
+
+Radio buttons allow the user to select one option from a set.
+
+```js
+import Radio from '@loyalory/common/src/components/Radio';
+
+<Radio />;
+```
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <Theme>
+      <Radio checked={false} label="Radiobutton label" onToggle={() => {}} />
+    </Theme>
+  </Story>
+</Preview>
+
+### Checked
+
+<Preview>
+  <Story name="Checked">
+    <Theme>
+      <Radio checked={true} label="Radiobutton label" onToggle={() => {}} />
+    </Theme>
+  </Story>
+</Preview>
+
+### With error
+
+<Preview>
+  <Story name="With error">
+    <Theme>
+      <Radio checked={false} error="Error message" label="Radiobutton label" onToggle={() => {}} />
+    </Theme>
+  </Story>
+</Preview>
+
+### Custom color
+
+<Preview>
+  <Story name="Custom color">
+    <Theme>
+      <Radio
+        checked={false}
+        IndicatorProps={{ color: 'secondary' }}
+        label="Radiobutton label"
+        onToggle={() => {}}
+      />
+      <Radio
+        checked={true}
+        IndicatorProps={{ color: 'secondary' }}
+        label="Radiobutton label"
+        onToggle={() => {}}
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Radio} />

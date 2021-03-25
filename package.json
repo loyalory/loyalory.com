@@ -1,0 +1,32 @@
+{
+  "name": "loyalory",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Loyalory Team",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.4.4",
+    "next-absolute-url": "1.2.2",
+    "next-compose-plugins": "2.2.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "dotenv": "8.2.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "5.4.0",
+    "@zeit/next-css": "1.0.1",
+    "babel-plugin-styled-components": "1.10.7",
+    "next-images": "1.4.0",
+    "next-transpile-modules": "3.3.0",
+    "webpack": "4.42.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

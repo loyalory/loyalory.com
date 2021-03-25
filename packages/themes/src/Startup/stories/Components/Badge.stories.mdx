@@ -1,0 +1,29 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Badge from '@loyalory/common/src/components/Badge';
+
+import Theme from '../../index';
+
+<Meta title="Themes|Startup/Components/Badge" component={Badge} />
+
+# Badge
+
+Badges contain content and actions about a single subject.
+
+```js
+import Badge from '@loyalory/common/src/components/Badge';
+
+<Badge>Content of the badge</Badge>;
+```
+
+<Preview>
+  <Story name="Default">
+    <Theme>
+      <Badge>New</Badge>
+    </Theme>
+  </Story>
+</Preview>
+
+## Props
+
+This component doesn't have specified prop types. Use default props as in SPAN html tag and styled system stuff.

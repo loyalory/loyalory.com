@@ -1,0 +1,36 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Box from '@loyalory/common/src/components/Box';
+
+<Meta title="Common|Components/Box" component={Box} />
+
+# Box
+
+Box is the simplest element for building complete themes.
+
+```js
+import Box from '@loyalory/common/src/components/Box';
+
+<Box>Content</Box>;
+```
+
+<Preview>
+  <Story name="Default">
+    <Box bg="#eee" p={3} fontSize="18px">Content</Box>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Flex box">
+    <Box flexBox justifyContent="space-between">
+      <Box p={3} bg="#eee">Box 1</Box>
+      <Box p={3} bg="#eee">Box 2</Box>
+      <Box p={3} bg="#eee">Box 3</Box>
+    </Box>
+  </Story>
+</Preview>
+
+## Props
+
+It supports also styled-system props.
+
+<Props of={Box} />

@@ -1,0 +1,57 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Theme from '../../index';
+
+import Article from '../../components/Article';
+
+import article from '../../assets/articles/article-1.jpg';
+import articlex2 from '../../assets/articles/article-1@2x.jpg';
+
+<Meta title="Themes|Startup/Components/Article" component={Article} />
+
+# Article
+
+Article is a complex element to show single blog post.
+
+```js
+import Article from '@loyalory/common/src/components/Article';
+
+<Article src="path to image" />;
+```
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <Theme>
+      <Article
+        src={article}
+        srcSet={`${article} 1x, ${articlex2} 2x`}
+        date="Yesterday"
+        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        text="Nullam sed tellus nec arcu mollis iaculis. Aliquam eget velit a libero suscipit tempor eget at leo. Vestibulum commodo tempor gravida. Donec dictum nunc at lorem euismod, et faucibus ante consectetur. Nullam porttitor eros in ligula posuere dignissim."
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+### Small
+
+<Preview>
+  <Story name="Small">
+    <Theme>
+      <Article
+        width={400}
+        isSmall
+        src={article}
+        srcSet={`${article} 1x, ${articlex2} 2x`}
+        date="Yesterday"
+        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Article} />

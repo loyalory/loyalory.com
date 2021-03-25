@@ -1,0 +1,101 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Button from '@loyalory/common/src/components/Button';
+
+import Theme from '../../index';
+
+<Meta title="Themes|Startup/Components/Button" component={Button} />
+
+# Button
+
+Buttons allow users to take actions, and make choices, with a single tap.
+They are also prepared to working as a custom urls or route links.
+
+```js
+import Button from '@loyalory/common/src/components/Button';
+
+<Button color="primary">Primary</Button>;
+```
+
+### Basic
+
+<Preview>
+  <Story name="Basic">
+    <Theme>
+      <Button>Default</Button>
+      <Button color="primary">Primary</Button>
+      <Button color="secondary">Secondary</Button>
+      <Button color="accent">Accent</Button>
+      <Button color="default">Default</Button>
+    </Theme>
+  </Story>
+</Preview>
+
+### Variants
+
+<Preview>
+  <Story name="Variants">
+    <Theme>
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="accent">Accent</Button>
+      <Button variant="default">Default</Button>
+    </Theme>
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview>
+  <Story name="Disabled">
+    <Theme>
+      <Button disabled variant="primary">
+        Primary
+      </Button>
+      <Button disabled variant="secondary">
+        Secondary
+      </Button>
+      <Button disabled variant="accent">
+        Accent
+      </Button>
+      <Button disabled variant="default">
+        Default
+      </Button>
+    </Theme>
+  </Story>
+</Preview>
+
+### Sizes
+
+<Preview>
+  <Story name="Sizes">
+    <Theme>
+      <Button size="small" variant="primary">
+        Small
+      </Button>
+      <Button size="normal" variant="primary">
+        Normal
+      </Button>
+      <Button size="large" variant="primary">
+        Large
+      </Button>
+    </Theme>
+  </Story>
+</Preview>
+
+### Customizing
+
+<Preview>
+  <Story name="Customizing">
+    <Theme>
+      <Button as="a" href="https://mypags.app" variant="primary">
+        This is a link button
+      </Button>
+    </Theme>
+  </Story>
+</Preview>
+
+## Props
+
+It supports also styled-system props.
+
+<Props of={Button} />

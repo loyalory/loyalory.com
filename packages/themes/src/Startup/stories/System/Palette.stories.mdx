@@ -1,0 +1,203 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Grid from '@loyalory/common/src/components/Grid';
+import Box from '@loyalory/common/src/components/Box';
+
+import Theme, { theme } from '../../index';
+
+<Meta title="Themes|Startup/System/Palette" />
+
+# Palette
+
+Convey meaning through color with a handful of color utility classes.
+
+## Colors
+
+<Preview>
+  <Theme>
+    <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={16}>
+      <Box bg="primary" height={150} />
+      <Box bg="secondary" height={150} />
+      <Box bg="accent" height={150} />
+      <Box bg="black" height={150} />
+      <Box>
+        Primary
+        <br />
+        <small>{theme.colors.primary}</small>
+      </Box>
+      <Box>
+        Secondary
+        <br />
+        <small>{theme.colors.secondary}</small>
+      </Box>
+      <Box>
+        Accent
+        <br />
+        <small>{theme.colors.accent}</small>
+      </Box>
+      <Box>
+        Black
+        <br />
+        <small>{theme.colors.black}</small>
+      </Box>
+    </Grid>
+  </Theme>
+</Preview>
+
+## Shades
+
+### Primary
+
+<Preview>
+  <Theme>
+    <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={16}>
+      <Box bg="shades.primary.0" height={150} />
+      <Box bg="shades.primary.1" height={150} />
+      <Box bg="shades.primary.2" height={150} />
+      <Box bg="shades.primary.3" height={150} />
+      <Box>
+        Primary default
+        <br />
+        <small>{theme.colors.shades.primary[0]}</small>
+      </Box>
+      <Box>
+        Primary light
+        <br />
+        <small>{theme.colors.shades.primary[1]}</small>
+      </Box>
+      <Box>
+        Primary lighter
+        <br />
+        <small>{theme.colors.shades.primary[2]}</small>
+      </Box>
+      <Box>
+        Primary lightest
+        <br />
+        <small>{theme.colors.shades.primary[3]}</small>
+      </Box>
+    </Grid>
+  </Theme>
+</Preview>
+
+### Secondary
+
+<Preview>
+  <Theme>
+    <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={16}>
+      <Box bg="shades.secondary.0" height={150} />
+      <Box bg="shades.secondary.1" height={150} />
+      <Box bg="shades.secondary.2" height={150} />
+      <Box bg="shades.secondary.3" height={150} />
+      <Box>
+        Secondary default
+        <br />
+        <small>{theme.colors.shades.secondary[0]}</small>
+      </Box>
+      <Box>
+        Secondary light
+        <br />
+        <small>{theme.colors.shades.secondary[1]}</small>
+      </Box>
+      <Box>
+        Secondary lighter
+        <br />
+        <small>{theme.colors.shades.secondary[2]}</small>
+      </Box>
+      <Box>
+        Secondary lightest
+        <br />
+        <small>{theme.colors.shades.secondary[3]}</small>
+      </Box>
+    </Grid>
+  </Theme>
+</Preview>
+
+### Accent
+
+<Preview>
+  <Theme>
+    <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={16}>
+      <Box bg="shades.accent.0" height={150} />
+      <Box bg="shades.accent.1" height={150} />
+      <Box bg="shades.accent.2" height={150} />
+      <Box bg="shades.accent.3" height={150} />
+      <Box>
+        Accent default
+        <br />
+        <small>{theme.colors.shades.accent[0]}</small>
+      </Box>
+      <Box>
+        Accent light
+        <br />
+        <small>{theme.colors.shades.accent[1]}</small>
+      </Box>
+      <Box>
+        Accent lighter
+        <br />
+        <small>{theme.colors.shades.accent[2]}</small>
+      </Box>
+      <Box>
+        Accent lightest
+        <br />
+        <small>{theme.colors.shades.accent[3]}</small>
+      </Box>
+    </Grid>
+  </Theme>
+</Preview>
+
+### Neutrals
+
+<Preview>
+  <Theme>
+    <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={16}>
+      <Box>
+        <Box bg="gray.0" height={150} mb={3} />
+        Gray darkest
+        <br />
+        <small>{theme.colors.gray[0]}</small>
+      </Box>
+      <Box>
+        <Box bg="gray.1" height={150} mb={3} />
+        Gray darker
+        <br />
+        <small>{theme.colors.gray[1]}</small>
+      </Box>
+      <Box>
+        <Box bg="gray.2" height={150} mb={3} />
+        Gray dark
+        <br />
+        <small>{theme.colors.gray[2]}</small>
+      </Box>
+      <Box>
+        <Box bg="gray.3" height={150} mb={3} />
+        Gray
+        <br />
+        <small>{theme.colors.gray[3]}</small>
+      </Box>
+      <Box>
+        <Box bg="gray.4" height={150} mb={3} />
+        Gray light
+        <br />
+        <small>{theme.colors.gray[4]}</small>
+      </Box>
+      <Box>
+        <Box bg="gray.5" height={150} mb={3} />
+        Gray lighter
+        <br />
+        <small>{theme.colors.gray[5]}</small>
+      </Box>
+      <Box>
+        <Box bg="gray.6" height={150} mb={3} />
+        Gray lightest
+        <br />
+        <small>{theme.colors.gray[6]}</small>
+      </Box>
+      <Box>
+        <Box bg="gray.7" height={150} mb={3} border="1px solid #EAE8E9" />
+        White
+        <br />
+        <small>{theme.colors.gray[7]}</small>
+      </Box>
+    </Grid>
+  </Theme>
+</Preview>

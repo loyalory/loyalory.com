@@ -1,0 +1,32 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Grid from '@loyalory/common/src/components/Grid';
+import Box from '@loyalory/common/src/components/Box';
+
+<Meta title="Common|Components/Grid" component={Grid} />
+
+# Grid
+
+Grid is the simplest element for building complete themes. See more https://css-tricks.com/snippets/css/complete-guide-grid/
+
+```js
+import Grid from '@loyalory/common/src/components/Grid';
+
+<Grid >Content</Grid>;
+```
+
+<Preview>
+  <Story name="Default">
+    <Grid gridTemplateColumns="1fr 1fr" gridGap="10px">
+      <Box p={3} bg="#eee">Box 1</Box>
+      <Box p={3} bg="#eee">Box 2</Box>
+      <Box p={3} bg="#eee">Box 3</Box>
+      <Box p={3} bg="#eee">Box 4</Box>
+    </Grid>
+  </Story>
+</Preview>
+
+## Props
+
+It supports also styled-system props.
+
+<Props of={Grid} />

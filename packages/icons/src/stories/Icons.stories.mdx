@@ -1,0 +1,37 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+
+import Grid from '@loyalory/common/src/components/Grid';
+import Icon from '@loyalory/common/src/components/Icon';
+import * as icons from '@loyalory/icons/src/line';
+
+<Meta title="Icons|All" />
+
+# Icons
+Guidance and suggestions for using icon
+
+```js
+import Icon from '@loyalory/common/src/components/Icon';
+import Heart from '@loyalory/icons/src/line/Heart';
+
+<Icon icon={Heart} />;
+```
+
+<Grid
+  gridTemplateColumns="repeat(auto-fit, 128px)"
+  gridColumnGap="16px"
+  gridRowGap="32px"
+  textAlign="center"
+  mb={100}
+>
+  {Object.keys(icons).map(icon => (
+    <div key={icon}>
+      <Icon icon={icons[icon]} fontSize={24} display="block" title={icon} />
+      {icon}
+    </div>
+  ))}
+</Grid>
+
+## Props
+
+<Props of={Icon} />

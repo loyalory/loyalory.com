@@ -1,0 +1,12 @@
+{
+  "name": "@loyalory/icons",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Loyalory Team",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
+}

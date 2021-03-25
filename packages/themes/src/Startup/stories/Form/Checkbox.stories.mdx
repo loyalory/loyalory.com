@@ -1,0 +1,76 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Theme from '../../index';
+import Checkbox from '@loyalory/common/src/components/Checkbox';
+
+<Meta title="Themes|Startup/Form/Checkbox" component={Checkbox} />
+
+# Checkbox
+
+Checkbox buttons allow the user to select one option from a set.
+
+```js
+import Checkbox from '@loyalory/common/src/components/Checkbox';
+
+<Checkbox />;
+```
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <Theme>
+      <Checkbox checked={false} label="Checkboxbutton label" onToggle={() => {}} />
+    </Theme>
+  </Story>
+</Preview>
+
+### Checked
+
+<Preview>
+  <Story name="Checked">
+    <Theme>
+      <Checkbox checked={true} label="Checkboxbutton label" onToggle={() => {}} />
+    </Theme>
+  </Story>
+</Preview>
+
+### With error
+
+<Preview>
+  <Story name="With error">
+    <Theme>
+      <Checkbox
+        checked={false}
+        error="Error message"
+        label="Checkboxbutton label"
+        onToggle={() => {}}
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+### Custom color
+
+<Preview>
+  <Story name="Custom color">
+    <Theme>
+      <Checkbox
+        checked={false}
+        IndicatorProps={{ color: 'secondary' }}
+        label="Checkboxbutton label"
+        onToggle={() => {}}
+      />
+      <Checkbox
+        checked={true}
+        IndicatorProps={{ color: 'secondary' }}
+        label="Checkboxbutton label"
+        onToggle={() => {}}
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Checkbox} />

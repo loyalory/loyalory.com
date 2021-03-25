@@ -1,0 +1,68 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Accordion from '@loyalory/common/src/components/Accordion';
+import Card from '@loyalory/common/src/components/Card';
+import Typography from '@loyalory/common/src/components/Typography';
+import Fade from 'react-reveal/Fade';
+
+import Theme from '../../index';
+
+<Meta title="Themes|Startup/Components/Accordion" component={Accordion} />
+
+# Accordion
+
+Accordion is a component to rendering collapsed items.
+
+```js
+import Accordion from '@loyalory/common/src/components/Accordion';
+
+<Accordion
+  options={[
+    {
+      title: 'Option 1',
+      content: 'Collapsed content',
+    },
+    {
+      title: 'Option 2',
+      content: 'Collapsed content',
+    },
+  ]}
+  renderItem={({ option, key, onSelect, isSelected }) => (
+    <div onClick={onSelect}>
+      {option.title} {isSelected && option.content}
+    </div>
+  )}
+/>;
+```
+
+<Preview>
+  <Story name="Default">
+    <Theme>
+      <Accordion
+        options={[
+          {
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+            content:
+              'Phasellus porta nibh metus, vel imperdiet dui viverra a. Vestibulum eget tempus lorem, eget placerat lacus. Quisque et metus velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          },
+          {
+            title: 'Duis fermentum augue diam, at efficitur',
+            content:
+              'Aenean ante justo, sodales ut semper ac, consectetur id lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vel risus turpis.',
+          },
+        ]}
+        renderItem={({ option, key, onSelect, isSelected }) => (
+          <Card borderRadius={8} onClick={onSelect} p={4} mb={2} as="button">
+            <Typography variant="h4">{option.title}</Typography>
+            <Fade duration={600} collapse when={isSelected}>
+              <Typography pt={2}>{option.content}</Typography>
+            </Fade>
+          </Card>
+        )}
+      />
+    </Theme>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Accordion} />

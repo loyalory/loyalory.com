@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
-import { Link } from 'react-scroll';
+import { Link as RSLink } from 'react-scroll';
 import { smoothLinkProps } from '@loyalory/common/src/utils';
 
 import Container from '@loyalory/common/src/components/Container';
@@ -71,9 +72,11 @@ const Navbar = ({
           <Container {...ContainerProps}>
             <Box flexBox alignItems="center">
               {Logo && (
-                <LogoWrapper {...LogoProps}>
-                  <Logo />
-                </LogoWrapper>
+                <Link href="/">
+                  <LogoWrapper {...LogoProps}>
+                    <Logo />
+                  </LogoWrapper>
+                </Link>
               )}
               <Box {...MenuItemsListProps}>{menu(onClose)}</Box>
               <ToggleButton isActive={isOpen} toggleButton={onToggle} {...ToggleButtonProps} />
@@ -176,7 +179,7 @@ Navbar.defaultProps = {
     width: '100%',
   },
   LogoProps: {
-    as: Link,
+    as: RSLink,
     to: '',
     ...smoothLinkProps,
     mx: {
@@ -202,7 +205,7 @@ Navbar.defaultProps = {
       _: 3,
       lg: 0,
     },
-    as: Link,
+    as: RSLink,
     activeColor: 'secondary',
     ...smoothLinkProps,
   },

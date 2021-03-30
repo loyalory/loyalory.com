@@ -89,7 +89,7 @@ export default {
     ],
     actions: [
       {
-        href: '#',
+        href: '/register',
         label: 'Book a demo',
       },
     ],
@@ -158,7 +158,7 @@ export default {
     ],
     cta: {
       label: 'Request a free demo',
-      href: '#',
+      href: '/register',
     },
   },
   about: {

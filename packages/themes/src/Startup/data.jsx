@@ -89,7 +89,7 @@ export default {
     ],
     actions: [
       {
-        href: '/register',
+        href: 'register',
         label: 'Book a demo',
       },
     ],

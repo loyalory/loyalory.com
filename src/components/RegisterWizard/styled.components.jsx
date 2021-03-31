@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import {base} from '@loyalory/common/src/utils'
+import {base} from '@loyalory/common/src/utils';
 import Box from '@loyalory/common/src/components/Box';
 
 export const Wrapper = styled(Box)`
@@ -10,9 +10,32 @@ export const Wrapper = styled(Box)`
   box-shadow: 0 36px 64px rgba(34, 39, 43, 0.06);
 `;
 
+export const StepWrap = styled(Box)`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const StepDot = styled.div`
+  width: ${props => props.current ? '28px' : '20px'};
+  height: ${props => props.current ? '28px' : '20px'};
+  border-radius: 50%;
+  background-color: ${props => props.active ? '#4960F6' : '#E8E8E8'};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StepDivider = styled.div`
+  height: 50px;
+  width: 2px;
+  background-color: ${props => props.active ? '#4960F6' : '#E8E8E8'};
+`;
+
 export const PhoneWrapper = styled.div`
   position: relative;
   width: calc(360px * 0.7);
+  overflow: hidden;
   z-index: 1;
   height: calc(780px * 0.7);
   background-color: #EC5E9B;

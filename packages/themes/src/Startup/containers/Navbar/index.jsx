@@ -49,9 +49,11 @@ const Navbar = ({
       {actions && (
         <Box {...ActionsWrapperProps}>
           {actions.map(({ label, ...link }, i) => (
-            <Button {...ActionProps} onClick={onClick} {...link} key={i}>
-              {label}
-            </Button>
+            <Link {...link} key={i}>
+              <Button {...ActionProps}>
+                {label}
+              </Button>
+            </Link>
           ))}
         </Box>
       )}
@@ -221,7 +223,6 @@ Navbar.defaultProps = {
   },
   ActionProps: {
     variant: 'accent',
-    as: 'a',
   },
   ToggleButtonProps: {
     buttonWidth: 24,

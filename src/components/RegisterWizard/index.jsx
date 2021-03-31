@@ -26,7 +26,7 @@ function RegisterWizard({ TitleProps, PhoneWrapperProps, FormWrapperProps, Conta
     >
       {fmProps => (
         <Form>
-          <Wrapper>
+          <Wrapper pt={80}>
             <Background />
             <Container position="relative">
               <Squares />
@@ -36,7 +36,7 @@ function RegisterWizard({ TitleProps, PhoneWrapperProps, FormWrapperProps, Conta
                     <PhoneWrapper>
                       <PhoneScreen1 scale={0.7} companyName={fmProps.values.companyName} />
                     </PhoneWrapper>
-                    <PhoneWrapper2 />
+                    <PhoneWrapper2 display={{_: 'none', md: 'block'}} />
                   </Box>
                 </Fade>
                 <Box {...FormWrapperProps}>
@@ -79,12 +79,15 @@ RegisterWizard.defaultProps = {
     variant: 'h2',
     color: 'black',
     textAlign: 'center',
-    mb: 4
+    mb: 4,
   },
   ContainerProps: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '80px 0px',
+    p: {
+      _: 0,
+      lg: 4,
+    },
     flexDirection: {
       _: 'column',
       lg: 'row',
@@ -94,12 +97,12 @@ RegisterWizard.defaultProps = {
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
-    p: 4
+    justifyContent: 'center',
   },
   FormWrapperProps: {
     position: 'relative',
     flexGrow: 1,
-    padding: '20px 0px',
+    padding: '40px 0px',
   },
 };
 

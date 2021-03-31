@@ -6,6 +6,7 @@ import Box from '@loyalory/common/src/components/Box';
 
 export const Wrapper = styled(Box)`
   ${base};
+  overflow: hidden;
   min-height: calc(100vh - (80px + 64px));
   box-shadow: 0 36px 64px rgba(34, 39, 43, 0.06);
 `;
@@ -32,7 +33,7 @@ export const StepDivider = styled.div`
   background-color: ${props => props.active ? '#4960F6' : '#E8E8E8'};
 `;
 
-export const PhoneWrapper = styled.div`
+export const PhoneWrapper = styled(Box)`
   position: relative;
   width: calc(360px * 0.7);
   overflow: hidden;

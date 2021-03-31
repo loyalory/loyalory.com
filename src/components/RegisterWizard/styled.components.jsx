@@ -11,6 +11,10 @@ export const Wrapper = styled(Box)`
   box-shadow: 0 36px 64px rgba(34, 39, 43, 0.06);
 `;
 
+export const StepEditBtn = styled(Box)`
+  cursor: pointer;
+`;
+
 export const StepWrap = styled(Box)`
   display: flex;
   align-items: center;
@@ -28,7 +32,7 @@ export const StepDot = styled.div`
 `;
 
 export const StepDivider = styled.div`
-  height: 50px;
+  height: 40px;
   width: 2px;
   background-color: ${props => props.active ? '#4960F6' : '#E8E8E8'};
 `;

@@ -7,7 +7,7 @@ import {StepWrap, StepDot, StepDivider} from './styled.components';
 
 const Wizard = ({currentStep, total}) => {
   return (
-    <StepWrap mr={4}>
+    <StepWrap mr={{_: 3, md: 4}}>
       {Array.from({length: total}).map((item, idx) => (
         <>
           <Fade key={item} cascade top duration={500}>

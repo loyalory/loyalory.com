@@ -216,7 +216,7 @@ function PhoneScreen1(props) {
         x="50%"
       >
         <tspan y={85.664}>
-          {props.companyName || "Loyalory"}
+          {props.businessName || "Loyalory"}
         </tspan>
       </text>
       <text

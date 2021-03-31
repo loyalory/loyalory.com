@@ -91,7 +91,7 @@ function PhoneScreen2(props) {
         x="50%"
       >
         <tspan y={178.082}>
-          {`Login to ${props.companyName || 'Loyalory'}`}
+          {`Login to ${props.businessName || 'Loyalory'}`}
         </tspan>
       </text>
       <path

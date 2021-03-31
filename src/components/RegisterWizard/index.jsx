@@ -9,8 +9,9 @@ import Typography from '@loyalory/common/src/components/Typography';
 import Box from '@loyalory/common/src/components/Box';
 import Input from '@loyalory/common/src/components/Formik/Input';
 import Button from '@loyalory/common/src/components/Button';
+import EditAlt from '@loyalory/icons/src/line/EditAlt';
 
-import {Wrapper,  PhoneWrapper, PhoneWrapper2} from './styled.components';
+import {Wrapper,  PhoneWrapper, PhoneWrapper2, StepEditBtn} from './styled.components';
 import Background from './Background';
 import Squares from './Squares';
 import PhoneScreen1 from './PhoneScreen1';
@@ -19,6 +20,7 @@ import PhoneScreen3 from './PhoneScreen3';
 import PhoneScreen4 from './PhoneScreen4';
 import PhoneScreen5 from './PhoneScreen5';
 import Wizard from './Wizard';
+import SelectCategory from './SelectCategory';
 
 const STEPS = {
   1: {
@@ -26,18 +28,26 @@ const STEPS = {
     Screen2: PhoneScreen2,
     FormFields: () => <>
       <Fade bottom duration={600}>
-        <Input key="companyName" name="companyName" type="string" placeholder="Your company name" label="Company name" autoFocus />
+        <Input key="businessName" name="businessName" type="string" placeholder="Your business name" label="Business name" autoFocus />
       </Fade>
     </>,
+    EditActions: ({setStep, values}) => <StepEditBtn display="flex" mb={4} onClick={() => setStep(1)}>
+      <Typography variant="h5" color="secondary" mr={2}>{values.businessName || 'Business name'}</Typography>
+      <EditAlt width={20} fill="#4960F6" />
+    </StepEditBtn>,
   },
   2: {
     Screen1: PhoneScreen4,
     Screen2: PhoneScreen3,
     FormFields: () => <>
       <Fade bottom duration={600}>
-        <Input key="businessType" name="businessType" type="string" label="Select your business type" />
+        <SelectCategory key="businessType" name="businessType" type="string" label="Select your business type" />
       </Fade>
     </>,
+    EditActions: ({setStep, values}) => <StepEditBtn display="flex" mb={4} onClick={() => setStep(2)}>
+      <Typography variant="h5" color="secondary" mr={2}>{values.businessType || 'Business category'}</Typography>
+      <EditAlt width={20} fill="#4960F6" />
+    </StepEditBtn>,
   },
   3: {
     Screen1: PhoneScreen3,
@@ -47,13 +57,18 @@ const STEPS = {
         <Input key="customizeApp" name="customizeApp" type="string" label="Customize theme" />
       </Fade>
     </>,
+    EditActions: ({setStep}) => <StepEditBtn display="flex" mb={4} onClick={() => setStep(3)}>
+      <Typography variant="h5" color="secondary" mr={2}>{'Customize theme'}</Typography>
+      <EditAlt width={20} fill="#4960F6" />
+    </StepEditBtn>,
   },
   4: {
     Screen1: PhoneScreen5,
     Screen2: PhoneScreen1,
     FormFields: () => <>
       <Fade bottom duration={600}>
-        <Input key="email" name="email" type="string" type="email" placeholder="Your email" label="Email" />
+        {/* <Input key="name" name="name" type="string" placeholder="Your name" label="Name" /> */}
+        <Input key="email" name="email" type="email" placeholder="Your email" label="Email" />
       </Fade>
     </>,
   },
@@ -71,7 +86,7 @@ function RegisterWizard({ TitleProps, PhoneWrapperProps, FormWrapperProps, Conta
       // validationSchema={mailer.validationSchema}
       // onSubmit={mailer.onSubmit}
       initialValues={{
-        companyName: ''
+        businessName: ''
       }}
     >
       {fmProps => (
@@ -102,6 +117,7 @@ function RegisterWizard({ TitleProps, PhoneWrapperProps, FormWrapperProps, Conta
                   <Box display="flex" flexDirection="row" p={2}>
                     <Wizard total={4} currentStep={step} />
                     <Box flexGrow={1}>
+                      {Object.keys(STEPS).map(key => STEPS[key].EditActions).filter((_, idx) => idx < step - 1).map(Component => <Component values={fmProps.values} setStep={setStep} />)}
                       {FormFields && <FormFields />}
                       <Button type="submit" variant="secondary" mt={4} onClick={() => step < 4 && setStep(step + 1)}>
                         {step < 4 ? 'Next' : 'Finish'}

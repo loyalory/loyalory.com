@@ -220,7 +220,7 @@ function PhoneScreen1(props) {
         </tspan>
       </text>
       <text
-        fill="#001833"
+        fill="#273651"
         style={{
           whiteSpace: "pre",
         }}
@@ -253,7 +253,6 @@ function PhoneScreen1(props) {
       <rect x={165} y={584} width={6} height={6} rx={3} fill="#AAA" />
       <rect x={203} y={584} width={6} height={6} rx={3} fill="#AAA" />
       <path fill="#fff" d="M0 778h375v34H0z" />
-      <rect x={120} y={799} width={135} height={5} rx={2.5} fill="#D8D8D8" />
     </svg>
   )
 }

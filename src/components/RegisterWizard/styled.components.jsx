@@ -35,11 +35,11 @@ export const StepDivider = styled.div`
 
 export const PhoneWrapper = styled(Box)`
   position: relative;
-  width: calc(360px * 0.7);
+  width: calc(375px * 0.7);
   overflow: hidden;
   z-index: 1;
-  height: calc(780px * 0.7);
-  background-color: #EC5E9B;
+  height: calc(812px * 0.7);
+  background-color: #FFFFFF;
   border-radius: calc(40px * 0.7);
   box-shadow: 0px 0px 0px calc(10px * 0.7) #2C466C, 0px 0px 0px calc(11px * 0.7) #2a4369, 0px 0px 0px calc(20px * 0.7) #284066;
   ::before, ::after {
@@ -47,6 +47,7 @@ export const PhoneWrapper = styled(Box)`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
   }
   ::after {
     bottom: 7px;
@@ -67,8 +68,8 @@ export const PhoneWrapper = styled(Box)`
 export const PhoneWrapper2 = styled(PhoneWrapper)`
   z-index: 0;
   background-color: #4960F6;
-  width: calc(360px * 0.6);
-  height: calc(780px * 0.6);
+  width: calc(375px * 0.6);
+  height: calc(812px * 0.6);
   border-radius: calc(40px * 0.6);
   transform: translateX(-60px);
   box-shadow: 0px 0px 0px calc(10px * 0.6) #2C466C, 0px 0px 0px calc(11px * 0.6) #2a4369, 0px 0px 0px calc(20px * 0.6) #284066;

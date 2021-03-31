@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
+// import Zoom from 'react-reveal/';
 import { Form, Formik } from 'formik';
 
 import Container from '@loyalory/common/src/components/Container';
@@ -13,9 +14,58 @@ import {Wrapper,  PhoneWrapper, PhoneWrapper2} from './styled.components';
 import Background from './Background';
 import Squares from './Squares';
 import PhoneScreen1 from './PhoneScreen1';
+import PhoneScreen2 from './PhoneScreen2';
+import PhoneScreen3 from './PhoneScreen3';
+import PhoneScreen4 from './PhoneScreen4';
+import PhoneScreen5 from './PhoneScreen5';
 import Wizard from './Wizard';
 
+const STEPS = {
+  1: {
+    Screen1: PhoneScreen1,
+    Screen2: PhoneScreen2,
+    FormFields: () => <>
+      <Fade bottom duration={600}>
+        <Input key="companyName" name="companyName" type="string" placeholder="Your company name" label="Company name" autoFocus />
+      </Fade>
+    </>,
+  },
+  2: {
+    Screen1: PhoneScreen4,
+    Screen2: PhoneScreen3,
+    FormFields: () => <>
+      <Fade bottom duration={600}>
+        <Input key="businessType" name="businessType" type="string" label="Select your business type" />
+      </Fade>
+    </>,
+  },
+  3: {
+    Screen1: PhoneScreen3,
+    Screen2: PhoneScreen5,
+    FormFields: () => <>
+      <Fade bottom duration={600}>
+        <Input key="customizeApp" name="customizeApp" type="string" label="Customize theme" />
+      </Fade>
+    </>,
+  },
+  4: {
+    Screen1: PhoneScreen5,
+    Screen2: PhoneScreen1,
+    FormFields: () => <>
+      <Fade bottom duration={600}>
+        <Input key="email" name="email" type="string" type="email" placeholder="Your email" label="Email" />
+      </Fade>
+    </>,
+  },
+}
+
 function RegisterWizard({ TitleProps, PhoneWrapperProps, FormWrapperProps, ContainerProps }) {
+  const [step, setStep] = useState(1);
+
+  const Screen1 = STEPS[step]?.Screen1;
+  const Screen2 = STEPS[step]?.Screen2;
+  const FormFields = STEPS[step]?.FormFields;
+
   return (
     <Formik
       // validationSchema={mailer.validationSchema}
@@ -34,9 +84,15 @@ function RegisterWizard({ TitleProps, PhoneWrapperProps, FormWrapperProps, Conta
                 <Fade cascade bottom duration={500}>
                   <Box {...PhoneWrapperProps}>
                     <PhoneWrapper>
-                      <PhoneScreen1 scale={0.7} companyName={fmProps.values.companyName} />
+                      <Fade cascade duration={500}>
+                        {Screen1 && <Screen1 step={step} scale={0.7} {...fmProps.values} />}
+                      </Fade>
                     </PhoneWrapper>
-                    <PhoneWrapper2 display={{_: 'none', md: 'block'}} />
+                    <PhoneWrapper2 display={{_: 'none', md: 'block'}}>
+                      <Fade cascade duration={500}>
+                        {Screen2 && <Screen2 step={step} scale={0.6} {...fmProps.values} />}
+                      </Fade>
+                    </PhoneWrapper2>
                   </Box>
                 </Fade>
                 <Box {...FormWrapperProps}>
@@ -44,16 +100,12 @@ function RegisterWizard({ TitleProps, PhoneWrapperProps, FormWrapperProps, Conta
                     <Typography {...TitleProps}>Loyalty app in 60 seconds</Typography>
                   </Fade>
                   <Box display="flex" flexDirection="row" p={2}>
-                    <Wizard total={4} currentStep={2} />
+                    <Wizard total={4} currentStep={step} />
                     <Box flexGrow={1}>
-                      <Fade cascade bottom duration={600}>
-                        <div>
-                          <Input key="companyName" name="companyName" type="string" placeholder="Your company name" label="Company name" />
-                        </div>
-                        <Button type="submit" variant="secondary" mt={4}>
-                          Next
-                        </Button>
-                      </Fade>
+                      {FormFields && <FormFields />}
+                      <Button type="submit" variant="secondary" mt={4} onClick={() => step < 4 && setStep(step + 1)}>
+                        {step < 4 ? 'Next' : 'Finish'}
+                      </Button>
                     </Box>
                   </Box>
                 </Box>
